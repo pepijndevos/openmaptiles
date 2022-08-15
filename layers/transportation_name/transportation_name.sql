@@ -59,7 +59,7 @@ FROM (
                 NULL::int AS level,
                 NULL::boolean AS indoor
          FROM osm_transportation_name_linestring_gen4
-         WHERE zoom_level = 6
+         WHERE zoom_level = 6+5
          UNION ALL
 
          -- etldoc: osm_transportation_name_linestring_gen3 ->  layer_transportation_name:z7
@@ -68,7 +68,7 @@ FROM (
                 NULL::int AS level,
                 NULL::boolean AS indoor
          FROM osm_transportation_name_linestring_gen3
-         WHERE zoom_level = 7
+         WHERE zoom_level = 7+5
          UNION ALL
 
          -- etldoc: osm_transportation_name_linestring_gen2 ->  layer_transportation_name:z8
@@ -77,7 +77,7 @@ FROM (
                 NULL::int AS level,
                 NULL::boolean AS indoor
          FROM osm_transportation_name_linestring_gen2
-         WHERE zoom_level = 8
+         WHERE zoom_level = 8+5
          UNION ALL
 
          -- etldoc: osm_transportation_name_linestring_gen1 ->  layer_transportation_name:z9
@@ -88,7 +88,7 @@ FROM (
                 NULL::int AS level,
                 NULL::boolean AS indoor
          FROM osm_transportation_name_linestring_gen1
-         WHERE zoom_level BETWEEN 9 AND 11
+         WHERE zoom_level BETWEEN 9+5 AND 11+5
          UNION ALL
 
          -- etldoc: osm_transportation_name_linestring ->  layer_transportation_name:z12
@@ -105,7 +105,7 @@ FROM (
                 "level",
                 indoor
          FROM osm_transportation_name_linestring
-         WHERE zoom_level = 12
+         WHERE zoom_level = 12+5
            AND LineLabel(zoom_level, COALESCE(tags->'name', ref), geometry)
            AND NOT highway_is_link(highway)
            AND
@@ -129,7 +129,7 @@ FROM (
                 "level",
                 indoor
          FROM osm_transportation_name_linestring
-         WHERE zoom_level = 13
+         WHERE zoom_level = 13+5
            AND LineLabel(zoom_level, COALESCE(tags->'name', ref), geometry)
            AND
                CASE WHEN highway <> 'path' THEN TRUE
@@ -157,7 +157,7 @@ FROM (
                 "level",
                 indoor
          FROM osm_transportation_name_linestring
-         WHERE zoom_level >= 14
+         WHERE zoom_level >= 14+5
          UNION ALL
 
          -- etldoc: osm_highway_point ->  layer_transportation_name:z10
@@ -184,7 +184,7 @@ FROM (
                 NULL::int AS level,
                 NULL::boolean AS indoor
          FROM osm_highway_point p
-         WHERE highway = 'motorway_junction' AND zoom_level >= 10
+         WHERE highway = 'motorway_junction' AND zoom_level >= 10+5
      ) AS zoom_levels
 WHERE geometry && bbox
 ORDER BY z_order ASC;

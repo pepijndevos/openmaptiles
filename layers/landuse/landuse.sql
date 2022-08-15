@@ -69,7 +69,7 @@ FROM (
                 place,
                 waterway
          FROM ne_50m_urban_areas_gen_z4
-         WHERE zoom_level = 4
+         WHERE zoom_level = 4+5
          UNION ALL
          -- etldoc: ne_50m_urban_areas_gen_z5 -> layer_landuse:z5
          SELECT osm_id,
@@ -81,7 +81,7 @@ FROM (
                 place,
                 waterway
          FROM ne_50m_urban_areas_gen_z5
-         WHERE zoom_level = 5
+         WHERE zoom_level = 5+5
          UNION ALL
          -- etldoc: osm_landuse_polygon_gen_z6 -> layer_landuse:z6
          SELECT osm_id,
@@ -93,7 +93,7 @@ FROM (
                 place,
                 waterway
          FROM osm_landuse_polygon_gen_z6
-         WHERE zoom_level = 6
+         WHERE zoom_level = 6+5
          UNION ALL
          -- etldoc: osm_landuse_polygon_gen_z7 -> layer_landuse:z7
          SELECT osm_id,
@@ -105,7 +105,7 @@ FROM (
                 place,
                 waterway
          FROM osm_landuse_polygon_gen_z7
-         WHERE zoom_level = 7
+         WHERE zoom_level = 7+5
          UNION ALL
          -- etldoc: osm_landuse_polygon_gen_z8 -> layer_landuse:z8
          SELECT osm_id,
@@ -117,7 +117,7 @@ FROM (
                 place,
                 waterway
          FROM osm_landuse_polygon_gen_z8
-         WHERE zoom_level = 8
+         WHERE zoom_level = 8+5
          UNION ALL
          -- etldoc: osm_landuse_polygon_gen_z9 -> layer_landuse:z9
          SELECT osm_id,
@@ -129,7 +129,7 @@ FROM (
                 place,
                 waterway
          FROM osm_landuse_polygon_gen_z9
-         WHERE zoom_level = 9
+         WHERE zoom_level = 9+5
          UNION ALL
          -- etldoc: osm_landuse_polygon_gen_z10 -> layer_landuse:z10
          SELECT osm_id,
@@ -141,7 +141,7 @@ FROM (
                 place,
                 waterway
          FROM osm_landuse_polygon_gen_z10
-         WHERE zoom_level = 10
+         WHERE zoom_level = 10+5
          UNION ALL
          -- etldoc: osm_landuse_polygon_gen_z11 -> layer_landuse:z11
          SELECT osm_id,
@@ -153,7 +153,7 @@ FROM (
                 place,
                 waterway
          FROM osm_landuse_polygon_gen_z11
-         WHERE zoom_level = 11
+         WHERE zoom_level = 11+5
          UNION ALL
          -- etldoc: osm_landuse_polygon_gen_z12 -> layer_landuse:z12
          SELECT osm_id,
@@ -165,7 +165,7 @@ FROM (
                 place,
                 waterway
          FROM osm_landuse_polygon_gen_z12
-         WHERE zoom_level = 12
+         WHERE zoom_level = 12+5
          UNION ALL
          -- etldoc: osm_landuse_polygon_gen_z13 -> layer_landuse:z13
          SELECT osm_id,
@@ -177,7 +177,7 @@ FROM (
                 place,
                 waterway
          FROM osm_landuse_polygon_gen_z13
-         WHERE zoom_level = 13
+         WHERE zoom_level = 13+5
          UNION ALL
          -- etldoc: osm_landuse_polygon -> layer_landuse:z14
          SELECT osm_id,
@@ -189,7 +189,7 @@ FROM (
                 place,
                 waterway
          FROM osm_landuse_polygon
-         WHERE zoom_level >= 14
+         WHERE zoom_level >= 14+5
      ) AS zoom_levels
 WHERE geometry && bbox;
 $$ LANGUAGE SQL STABLE

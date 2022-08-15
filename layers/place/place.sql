@@ -33,7 +33,7 @@ FROM (
              NULL::text AS iso_a2
          FROM osm_continent_point
          WHERE geometry && bbox
-           AND zoom_level < 4
+           AND zoom_level < 4+5
 
          UNION ALL
 
@@ -54,7 +54,7 @@ FROM (
              iso3166_1_alpha_2 AS iso_a2
          FROM osm_country_point
          WHERE geometry && bbox
-           AND "rank" <= zoom_level + 1
+           AND "rank" <= zoom_level + 1+5
            AND name <> ''
 
          UNION ALL
@@ -77,7 +77,7 @@ FROM (
          FROM osm_state_point
          WHERE geometry && bbox
            AND name <> ''
-           AND zoom_level > 1
+           AND zoom_level > 1+5
 
          UNION ALL
 
@@ -94,7 +94,7 @@ FROM (
              NULL::int AS capital,
              NULL::text AS iso_a2
          FROM osm_island_point
-         WHERE zoom_level >= 12
+         WHERE zoom_level >= 12+5
            AND geometry && bbox
 
          UNION ALL
@@ -114,9 +114,9 @@ FROM (
              NULL::text AS iso_a2
          FROM osm_island_polygon
          WHERE geometry && bbox
-           AND ((zoom_level = 8 AND island_rank(area) <= 3)
-             OR (zoom_level = 9 AND island_rank(area) <= 4)
-             OR (zoom_level >= 10))
+           AND ((zoom_level = 8+5 AND island_rank(area) <= 3)
+             OR (zoom_level = 9+5 AND island_rank(area) <= 4)
+             OR (zoom_level >= 10+5))
 
          UNION ALL
 

@@ -341,62 +341,62 @@ FROM (
          -- etldoc: waterway_z3 ->  layer_waterway:z3
          SELECT *
          FROM waterway_z3
-         WHERE zoom_level = 3
+         WHERE zoom_level = 3+5
          UNION ALL
          -- etldoc: waterway_z4 ->  layer_waterway:z4
          SELECT *
          FROM waterway_z4
-         WHERE zoom_level = 4
+         WHERE zoom_level = 4+5
          UNION ALL
          -- etldoc: waterway_z5 ->  layer_waterway:z5
          SELECT *
          FROM waterway_z5
-         WHERE zoom_level = 5
+         WHERE zoom_level = 5+5
          UNION ALL
          -- etldoc: waterway_z6 ->  layer_waterway:z6
          SELECT *
          FROM waterway_z6
-         WHERE zoom_level = 6
+         WHERE zoom_level = 6+5
          UNION ALL
          -- etldoc: waterway_z7 ->  layer_waterway:z7
          SELECT *
          FROM waterway_z7
-         WHERE zoom_level = 7
+         WHERE zoom_level = 7+5
          UNION ALL
          -- etldoc: waterway_z8 ->  layer_waterway:z8
          SELECT *
          FROM waterway_z8
-         WHERE zoom_level = 8
+         WHERE zoom_level = 8+5
          UNION ALL
          -- etldoc: waterway_z9 ->  layer_waterway:z9
          SELECT *
          FROM waterway_z9
-         WHERE zoom_level = 9
+         WHERE zoom_level = 9+5
          UNION ALL
          -- etldoc: waterway_z10 ->  layer_waterway:z10
          SELECT *
          FROM waterway_z10
-         WHERE zoom_level = 10
+         WHERE zoom_level = 10+5
          UNION ALL
          -- etldoc: waterway_z11 ->  layer_waterway:z11
          SELECT *
          FROM waterway_z11
-         WHERE zoom_level = 11
+         WHERE zoom_level = 11+5
          UNION ALL
          -- etldoc: waterway_z12 ->  layer_waterway:z12
          SELECT *
          FROM waterway_z12
-         WHERE zoom_level = 12
+         WHERE zoom_level = 12+5
          UNION ALL
          -- etldoc: waterway_z13 ->  layer_waterway:z13
          SELECT *
          FROM waterway_z13
-         WHERE zoom_level = 13
+         WHERE zoom_level = 13+5
          UNION ALL
          -- etldoc: waterway_z14 ->  layer_waterway:z14
          SELECT *
          FROM waterway_z14
-         WHERE zoom_level >= 14
+         WHERE zoom_level >= 14+5
      ) AS zoom_levels
 WHERE geometry && bbox;
 $$ LANGUAGE SQL STABLE

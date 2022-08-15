@@ -48,7 +48,7 @@ FROM (
                          NULL AS boundary,
                          NULL AS protection_title
                   FROM osm_park_polygon_dissolve_z4
-                  WHERE zoom_level = 4
+                  WHERE zoom_level = 4+5
                     AND geometry && bbox
                   UNION ALL
                   -- etldoc: osm_park_polygon_gen_z5 -> layer_park:z5
@@ -62,7 +62,7 @@ FROM (
                          boundary,
                          protection_title
                   FROM osm_park_polygon_gen_z5
-                  WHERE zoom_level = 5
+                  WHERE zoom_level = 5+5
                     AND geometry && bbox
                   UNION ALL
                   -- etldoc: osm_park_polygon_gen_z6 -> layer_park:z6
@@ -76,7 +76,7 @@ FROM (
                          boundary,
                          protection_title
                   FROM osm_park_polygon_gen_z6
-                  WHERE zoom_level = 6
+                  WHERE zoom_level = 6+5
                     AND geometry && bbox
                   UNION ALL
                   -- etldoc: osm_park_polygon_gen_z7 -> layer_park:z7
@@ -90,7 +90,7 @@ FROM (
                          boundary,
                          protection_title
                   FROM osm_park_polygon_gen_z7
-                  WHERE zoom_level = 7
+                  WHERE zoom_level = 7+5
                     AND geometry && bbox
                   UNION ALL
                   -- etldoc: osm_park_polygon_gen_z8 -> layer_park:z8
@@ -104,7 +104,7 @@ FROM (
                          boundary,
                          protection_title
                   FROM osm_park_polygon_gen_z8
-                  WHERE zoom_level = 8
+                  WHERE zoom_level = 8+5
                     AND geometry && bbox
                   UNION ALL
                   -- etldoc: osm_park_polygon_gen_z9 -> layer_park:z9
@@ -118,7 +118,7 @@ FROM (
                          boundary,
                          protection_title
                   FROM osm_park_polygon_gen_z9
-                  WHERE zoom_level = 9
+                  WHERE zoom_level = 9+5
                     AND geometry && bbox
                   UNION ALL
                   -- etldoc: osm_park_polygon_gen_z10 -> layer_park:z10
@@ -132,7 +132,7 @@ FROM (
                          boundary,
                          protection_title
                   FROM osm_park_polygon_gen_z10
-                  WHERE zoom_level = 10
+                  WHERE zoom_level = 10+5
                     AND geometry && bbox
                   UNION ALL
                   -- etldoc: osm_park_polygon_gen_z11 -> layer_park:z11
@@ -146,7 +146,7 @@ FROM (
                          boundary,
                          protection_title
                   FROM osm_park_polygon_gen_z11
-                  WHERE zoom_level = 11
+                  WHERE zoom_level = 11+5
                     AND geometry && bbox
                   UNION ALL
                   -- etldoc: osm_park_polygon_gen_z12 -> layer_park:z12
@@ -160,7 +160,7 @@ FROM (
                          boundary,
                          protection_title
                   FROM osm_park_polygon_gen_z12
-                  WHERE zoom_level = 12
+                  WHERE zoom_level = 12+5
                     AND geometry && bbox
                   UNION ALL
                   -- etldoc: osm_park_polygon_gen_z13 -> layer_park:z13
@@ -174,7 +174,7 @@ FROM (
                          boundary,
                          protection_title
                   FROM osm_park_polygon_gen_z13
-                  WHERE zoom_level = 13
+                  WHERE zoom_level = 13+5
                     AND geometry && bbox
                   UNION ALL
                   -- etldoc: osm_park_polygon -> layer_park:z14
@@ -188,7 +188,7 @@ FROM (
                          boundary,
                          protection_title
                   FROM osm_park_polygon
-                  WHERE zoom_level >= 14
+                  WHERE zoom_level >= 14+5
                     AND geometry && bbox
               ) AS park_polygon
 
@@ -224,7 +224,7 @@ FROM (
                          protection_title,
                          area
                   FROM osm_park_polygon_gen_z5
-                  WHERE zoom_level = 5
+                  WHERE zoom_level = 5+5
                     AND geometry_point && bbox
                     AND area > 70000*2^(20-zoom_level)
                   UNION ALL
@@ -241,7 +241,7 @@ FROM (
                          protection_title,
                          area
                   FROM osm_park_polygon_gen_z6
-                  WHERE zoom_level = 6
+                  WHERE zoom_level = 6+5
                     AND geometry_point && bbox
                     AND area > 70000*2^(20-zoom_level)
                   UNION ALL
@@ -258,7 +258,7 @@ FROM (
                          protection_title,
                          area
                   FROM osm_park_polygon_gen_z7
-                  WHERE zoom_level = 7
+                  WHERE zoom_level = 7+5
                     AND geometry_point && bbox
                     AND area > 70000*2^(20-zoom_level)
                   UNION ALL
@@ -275,7 +275,7 @@ FROM (
                          protection_title,
                          area
                   FROM osm_park_polygon_gen_z8
-                  WHERE zoom_level = 8
+                  WHERE zoom_level = 8+5
                     AND geometry_point && bbox
                     AND area > 70000*2^(20-zoom_level)
                   UNION ALL
@@ -292,7 +292,7 @@ FROM (
                          protection_title,
                          area
                   FROM osm_park_polygon_gen_z9
-                  WHERE zoom_level = 9
+                  WHERE zoom_level = 9+5
                     AND geometry_point && bbox
                     AND area > 70000*2^(20-zoom_level)
                   UNION ALL
@@ -309,7 +309,7 @@ FROM (
                          protection_title,
                          area
                   FROM osm_park_polygon_gen_z10
-                  WHERE zoom_level = 10
+                  WHERE zoom_level = 10+5
                     AND geometry_point && bbox
                     AND area > 70000*2^(20-zoom_level)
                   UNION ALL
@@ -326,7 +326,7 @@ FROM (
                          protection_title,
                          area
                   FROM osm_park_polygon_gen_z11
-                  WHERE zoom_level = 11
+                  WHERE zoom_level = 11+5
                     AND geometry_point && bbox
                     AND area > 70000*2^(20-zoom_level)
                   UNION ALL
@@ -343,7 +343,7 @@ FROM (
                          protection_title,
                          area
                   FROM osm_park_polygon_gen_z12
-                  WHERE zoom_level = 12
+                  WHERE zoom_level = 12+5
                     AND geometry_point && bbox
                     AND area > 70000*2^(20-zoom_level)
                   UNION ALL
@@ -360,7 +360,7 @@ FROM (
                          protection_title,
                          area
                   FROM osm_park_polygon_gen_z13
-                  WHERE zoom_level = 13
+                  WHERE zoom_level = 13+5
                     AND geometry_point && bbox
                     AND area > 70000*2^(20-zoom_level)
                   UNION ALL
@@ -377,7 +377,7 @@ FROM (
                          protection_title,
                          area
                   FROM osm_park_polygon
-                  WHERE zoom_level >= 14
+                  WHERE zoom_level >= 14+5
                     AND geometry_point && bbox
               ) AS park_point
      ) AS park_all;

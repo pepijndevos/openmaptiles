@@ -563,67 +563,67 @@ FROM (
          -- etldoc: water_z0 ->  layer_water:z0
          SELECT *
          FROM water_z0
-         WHERE zoom_level = 0
+         WHERE zoom_level = 0+5
          UNION ALL
          -- etldoc: water_z1 ->  layer_water:z1
          SELECT *
          FROM water_z1
-         WHERE zoom_level = 1
+         WHERE zoom_level = 1+5
          UNION ALL
          -- etldoc: water_z2 ->  layer_water:z2
          SELECT *
          FROM water_z2
-         WHERE zoom_level = 2
+         WHERE zoom_level = 2+5
          UNION ALL
          -- etldoc: water_z3 ->  layer_water:z3
          SELECT *
          FROM water_z3
-         WHERE zoom_level = 3
+         WHERE zoom_level = 3+5
          UNION ALL
          -- etldoc: water_z4 ->  layer_water:z4
          SELECT *
          FROM water_z4
-         WHERE zoom_level = 4
+         WHERE zoom_level = 4+5
          UNION ALL
          -- etldoc: water_z5 ->  layer_water:z5
          SELECT *
          FROM water_z5
-         WHERE zoom_level = 5
+         WHERE zoom_level = 5+5
          UNION ALL
          -- etldoc: water_z6 ->  layer_water:z6
          SELECT *
          FROM water_z6
-         WHERE zoom_level = 6
+         WHERE zoom_level = 6+5
          UNION ALL
          -- etldoc: water_z7 ->  layer_water:z7
          SELECT *
          FROM water_z7
-         WHERE zoom_level = 7
+         WHERE zoom_level = 7+5
          UNION ALL
          -- etldoc: water_z8 ->  layer_water:z8
          SELECT *
          FROM water_z8
-         WHERE zoom_level = 8
+         WHERE zoom_level = 8+5
          UNION ALL
          -- etldoc: water_z9 ->  layer_water:z9
          SELECT *
          FROM water_z9
-         WHERE zoom_level = 9
+         WHERE zoom_level = 9+5
          UNION ALL
          -- etldoc: water_z10 ->  layer_water:z10
          SELECT *
          FROM water_z10
-         WHERE zoom_level = 10
+         WHERE zoom_level = 10+5
          UNION ALL
          -- etldoc: water_z11 ->  layer_water:z11
          SELECT *
          FROM water_z11
-         WHERE zoom_level = 11
+         WHERE zoom_level = 11+5
          UNION ALL
          -- etldoc: water_z12 ->  layer_water:z12
          SELECT *
          FROM water_z12
-         WHERE zoom_level >= 12
+         WHERE zoom_level >= 12+5
      ) AS zoom_levels
 WHERE geometry && bbox;
 $$ LANGUAGE SQL STABLE

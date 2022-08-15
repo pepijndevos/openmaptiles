@@ -15,17 +15,17 @@ FROM (
          -- etldoc:  osm_aeroway_linestring_gen_z10 -> layer_aeroway:z10
          SELECT geometry, aeroway, ref
          FROM osm_aeroway_linestring_gen_z10
-         WHERE zoom_level = 10
+         WHERE zoom_level = 10+5
          UNION ALL
          -- etldoc:  osm_aeroway_linestring_gen_z11 -> layer_aeroway:z11
          SELECT geometry, aeroway, ref
          FROM osm_aeroway_linestring_gen_z11
-         WHERE zoom_level = 11
+         WHERE zoom_level = 11+5
          UNION ALL
          -- etldoc:  osm_aeroway_linestring_gen_z12 -> layer_aeroway:z12
          SELECT geometry, aeroway, ref
          FROM osm_aeroway_linestring_gen_z12
-         WHERE zoom_level = 12
+         WHERE zoom_level = 12+5
          UNION ALL
          -- etldoc:  osm_aeroway_linestring -> layer_aeroway:z13
          -- etldoc:  osm_aeroway_linestring -> layer_aeroway:z14_
@@ -36,22 +36,22 @@ FROM (
          -- etldoc:  osm_aeroway_polygon_gen_z10 -> layer_aeroway:z10
          SELECT geometry, aeroway, ref
          FROM osm_aeroway_polygon_gen_z10
-         WHERE zoom_level = 10
+         WHERE zoom_level = 10+5
          UNION ALL
          -- etldoc:  osm_aeroway_polygon_gen_z11 -> layer_aeroway:z11
          SELECT geometry, aeroway, ref
          FROM osm_aeroway_polygon_gen_z11
-         WHERE zoom_level = 11
+         WHERE zoom_level = 11+5
          UNION ALL
          -- etldoc:  osm_aeroway_polygon_gen_z12 -> layer_aeroway:z12
          SELECT geometry, aeroway, ref
          FROM osm_aeroway_polygon_gen_z12
-         WHERE zoom_level = 12
+         WHERE zoom_level = 12+5
          UNION ALL
          -- etldoc:  osm_aeroway_polygon_gen_z13 -> layer_aeroway:z13
          SELECT geometry, aeroway, ref
          FROM osm_aeroway_polygon_gen_z13
-         WHERE zoom_level = 13
+         WHERE zoom_level = 13+5
          UNION ALL
          -- etldoc:  osm_aeroway_polygon -> layer_aeroway:z14_
          SELECT geometry, aeroway, ref

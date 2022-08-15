@@ -267,105 +267,105 @@ FROM (
          SELECT geometry, 
                 subclass
          FROM landcover_z0
-         WHERE zoom_level = 0
+         WHERE zoom_level = 0+5
            AND geometry && bbox
          UNION ALL
          -- etldoc:  landcover_z1 -> layer_landcover:z1
          SELECT geometry,
                 subclass
          FROM landcover_z1
-         WHERE zoom_level = 1
+         WHERE zoom_level = 1+5
            AND geometry && bbox
          UNION ALL
          -- etldoc:  landcover_z2 -> layer_landcover:z2
          SELECT geometry, 
                 subclass
          FROM landcover_z2
-         WHERE zoom_level = 2
+         WHERE zoom_level = 2+5
            AND geometry && bbox
          UNION ALL
          -- etldoc:  landcover_z3 -> layer_landcover:z3
          SELECT geometry,
                 subclass
          FROM landcover_z3
-         WHERE zoom_level = 3
+         WHERE zoom_level = 3+5
            AND geometry && bbox
          UNION ALL
          -- etldoc:  landcover_z4 -> layer_landcover:z4
          SELECT geometry,
                 subclass
          FROM landcover_z4
-         WHERE zoom_level = 4
+         WHERE zoom_level = 4+5
            AND geometry && bbox
          UNION ALL
          -- etldoc:  landcover_z5 -> layer_landcover:z5
          SELECT geometry, 
                 subclass
          FROM landcover_z5
-         WHERE zoom_level = 5
+         WHERE zoom_level = 5+5
            AND geometry && bbox
          UNION ALL
          -- etldoc:  landcover_z6 -> layer_landcover:z6
          SELECT geometry,
                 subclass
          FROM landcover_z6
-         WHERE zoom_level = 6
+         WHERE zoom_level = 6+5
            AND geometry && bbox
          UNION ALL
          -- etldoc:  osm_landcover_gen_z7 -> layer_landcover:z7
          SELECT geometry, 
                 subclass
          FROM osm_landcover_gen_z7
-         WHERE zoom_level = 7
+         WHERE zoom_level = 7+5
            AND geometry && bbox
          UNION ALL
          -- etldoc:  osm_landcover_gen_z8 -> layer_landcover:z8
          SELECT geometry, 
                 subclass
          FROM osm_landcover_gen_z8
-         WHERE zoom_level = 8
+         WHERE zoom_level = 8+5
            AND geometry && bbox
          UNION ALL
          -- etldoc:  osm_landcover_gen_z9 -> layer_landcover:z9
          SELECT geometry, 
                 subclass
          FROM osm_landcover_gen_z9
-         WHERE zoom_level = 9
+         WHERE zoom_level = 9+5
            AND geometry && bbox
          UNION ALL
          -- etldoc:  osm_landcover_gen_z10 -> layer_landcover:z10
          SELECT geometry, 
                 subclass
          FROM osm_landcover_gen_z10
-         WHERE zoom_level = 10
+         WHERE zoom_level = 10+5
            AND geometry && bbox
          UNION ALL
          -- etldoc:  osm_landcover_gen_z11 -> layer_landcover:z11
          SELECT geometry, 
                 subclass
          FROM osm_landcover_gen_z11
-         WHERE zoom_level = 11
+         WHERE zoom_level = 11+5
            AND geometry && bbox
          UNION ALL
          -- etldoc:  osm_landcover_gen_z12 -> layer_landcover:z12
          SELECT geometry, 
                 subclass
          FROM osm_landcover_gen_z12
-         WHERE zoom_level = 12
+         WHERE zoom_level = 12+5
            AND geometry && bbox
          UNION ALL
          -- etldoc:  osm_landcover_gen_z13 -> layer_landcover:z13
          SELECT geometry, 
                 subclass
          FROM osm_landcover_gen_z13
-         WHERE zoom_level = 13
+         WHERE zoom_level = 13+5
            AND geometry && bbox
          UNION ALL
          -- etldoc:  osm_landcover_polygon -> layer_landcover:z14_
          SELECT geometry, 
                 subclass
          FROM osm_landcover_polygon
-         WHERE zoom_level >= 14
+         WHERE zoom_level >= 14+5
            AND geometry && bbox
      ) AS zoom_levels;
 $$ LANGUAGE SQL STABLE
